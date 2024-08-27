@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <script>
+        function pressbutton(btnvalue){
+            let caltext=document.querySelector(".screen").value + btnvalue + "";
+            document.querySelector(".screen").value = caltext;
+        }
+
+        function calculate(){
+            let caltext=document.querySelector(".screen").value ;
+            document.querySelector(".screen").value = eval(caltext);
+        }
+    </script>
+    <style>
+         .container{
+            background-color: rgb(131, 127, 127);
+            height:80%;
+            width:350px;
+            border-radius: 20px;
+            border:2px solid rgb(79, 73, 73);
+            margin: auto;
+         }
+         .row{
+            display:flex;
+            justify-content: space-around;
+
+         }
+         .btn{
+              background-color: rgb(227, 216, 216);
+              height:40px;
+              width:60px;
+              margin:10px;
+              border-radius: 10px;
+              font-size: 30px;
+              text-align: center;
+              box-shadow: 0px 4px 6px gray;
+              border: 1px solid black;
+              padding: 2.5px;
+         }
+         .btn:hover{
+            cursor: pointer;
+            box-shadow: 0px 0px 10px rgb(62, 61, 61);
+         }
+         .screen{
+            width:85%;
+            height: 60px;
+            margin-top:20px;
+            margin-left: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            background-color: rgb(103, 146, 127);
+            font-size: 50px;
+            border-color:rgb(93, 95, 94) ;
+            font-family: "digital-clock";
+         }
+         .p{
+            background-color: deepskyblue;
+            box-shadow: 0px 4px 10px white;
+         }
+         span{
+            margin-left: 20px;
+            color: white;
+         }
+         .e{
+            background-color: rgb(242, 89, 89);
+         }
+         .l{
+            margin-bottom: 30px;
+         }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="input">
+            <span>PRANALI</span>
+            <input type="text" class="screen">
+        </div>
+        <div class="row">
+            <div class="btn" onclick="pressbutton(7)">7</div>
+            <div class="btn" onclick="pressbutton(8)">8</div>
+            <div class="btn" onclick="pressbutton(9)">9</div>
+            <div class="btn p" onclick="pressbutton('/')">/</div>
+        </div>
+        <div class="row">
+            <div class="btn" onclick="pressbutton(4)">4</div>
+            <div class="btn" onclick="pressbutton(5)">5</div>
+            <div class="btn" onclick="pressbutton(6)">6</div>
+            <div class="btn p" onclick="pressbutton('*')">x</div>
+        </div>
+        <div class="row">
+            <div class="btn" onclick="pressbutton(1)">1</div>
+            <div class="btn" onclick="pressbutton(2)">2</div>
+            <div class="btn" onclick="pressbutton(3)">3</div>
+            <div class="btn p" onclick="pressbutton('-')">-</div>
+        </div>
+        <div class="row l">
+            <div class="btn" onclick="pressbutton(0)">0</div>
+            <div class="btn p" onclick="pressbutton('.')">.</div>
+            <div class="btn p" onclick="pressbutton('+')">+</div>
+            <div class="btn p e" onclick="calculate()">=</div>
+        </div>
+    </div>
+ 
+</body>
+</html>
